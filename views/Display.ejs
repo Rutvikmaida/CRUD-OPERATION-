@@ -1,0 +1,25 @@
+<%= mydata.length%>Records founds
+<table border="1">
+    <tr>
+
+        <th>ID</th>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    <% for(var i=0;i<mydata.length;i++) {%>
+        <tr>
+            <td><%=i+1%></td>
+            <td><%= mydata[i].uname %></td>
+            <td><%= mydata[i].umobile %></td>
+            <td><%= mydata[i].uemail %></td>
+            <td>
+                <a href="/show/<%= mydata[i]._id%>">Show</a>
+                <a href="/edit/<%= mydata[i]._id%>">Edit</a>
+                <a href="/Delete/<%= mydata[i]._id%>" onclick="return confirm('sure you want to delete?')">Delete</a>
+               
+                </td>
+        </tr>
+    <% } %>
+</table>
